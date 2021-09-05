@@ -59,21 +59,13 @@ app.post("/compose", function(req, res){
      content: req.body.postBody
 
    });
-   post.save(function(err){
-
-    if (!err){
-
-      res.redirect("/");
-
-    }
-
-  });
-
-
-
-  res.redirect("/");
-
-});
+   post.save();
+ res.redirect("/");
+   // post.save(function(err){
+   //  // if (!err){
+   //  // res.redirect("/");
+   //  // }
+ });
 
 app.get("/posts/:postId", function(req, res){
 
